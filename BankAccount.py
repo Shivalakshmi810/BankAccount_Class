@@ -1,46 +1,44 @@
+
 from abc import ABC,abstractmethod
 
+# create a class as an abstract class
+# we cannot create an object of an abstract class - Abstraction
 
+class BankAccount(ABC):
+    #constructor of the class
+ def __init__(self,balance):
+        #encapsulation
+        self.__balance =balance   #private
+    #creating an abstract method
+    #this method must be inheritted by the child classes
+ @abstractmethod
+ def calculate_intrests(self):
+        pass
 
+@property
+def balance(self):
+          return self.__balance
 
+@balance.setter
+def balance(self,value):
+          self.__balance=value
 
-class BankAccount(ABC) :
-    #creating an astract method :
-    # this method must be inherited by the  child classes
-    @abstractmethod
+def display_balance(self):
+        print(f"{self.__balance}")
+def deposite_money(self,inp_amt):
+        if  (inp_amt>0):
+            print('your money has been successfully credited to you account xxxxxxx345 ')
+            self.__balance+= inp_amt
+            print(f'your current balance :{self.__balance}')
+        else:
+            print('please provide a +ve number as deposite amt')
 
-    def __init__(self,balance):
-        self.__balance = balance 
-
-
-
-
-        def display_balance(self):
-        # we are displaying a private information
-        print ("The account  balance is (self.balance)")
-
-
-        @property
-        def balance(self):
-            return self.__balance
-
-        @balance.setter 
-
-        def balance(Self,amount):
-            if amount<0:
-                raise ValueError("updated balance cannot be a negative value ")
-            self.__balance=amount
-            print(f' Salary :(self.__balance)')
-
-            def deposit(self,amount):
-                if amount>0:
-                    self.__balance=self.__balance+amount
-                    # print (f'Deposit amount is successful :{self.__balance}')
-                    
-                    else
-                    print("The deposit amount must be a positive value")
-
-                    def withdraw(self,amount):
-                        if(amount>0) and(self.__balance>=amount)
-                        
+def withdraw_amt(self,inp_amt):
+        if  ((inp_amt > 0 )and( inp_amt<self.__balance)):
+                    self.__balance-= inp_amt
+                    print(f'your current balance :{balance}')
+        elif(inp_amt<self.__balance):
+                    print('insufficent money')
+        else:
+                    print('please provide a +ve number ')
                 
